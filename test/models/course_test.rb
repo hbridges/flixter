@@ -2,9 +2,9 @@ require 'test_helper'
 
 class CourseTest < ActiveSupport::TestCase
   test 'Course Create Validate' do
-  	user = User.create :email => 'test@gmail.com', :password => 'password'
+  	user = FactoryGirl.create(:user)
  	course  = user.courses.build
  	assert_not course.valid?
- 	assert_equal [:title, :description, :cost], course.error.keys
+ 	assert_equal [:title, :description, :cost], course.errors.keys
   end
 end
