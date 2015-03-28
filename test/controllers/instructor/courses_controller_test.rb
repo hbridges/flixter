@@ -30,7 +30,7 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
 	    assert_no_difference 'Course.count' do
 	      post :create, {
 	      	  :course => {
-	          	:title=> 'test',
+	          	:title => 'test',
 	          	:cost => 10
 	        }
 	      }
