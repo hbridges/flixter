@@ -12,13 +12,13 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
 
 	end
 
-	test 'Sign in to create course' do
+	test 'Invalid course create' do
 		user = FactoryGirl.create(:user)
 		sign_in user
 		assert_no_difference "Course.count" do
 			post :create, {
 				:course => {
-					:titele => 'test',
+					:title => '',
 					:cost => 10
 				}
 			}
@@ -26,5 +26,16 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
 		assert_response :unprocessable_entity
 	end
 
+	  test "user not signed in" do
+	    assert_no_difference 'Course.count' do
+	      post :create, {
+	      	  :course => {
+	          	:title=> 'test',
+	          	:cost => 10
+	        }
+	      }
+	    end
+	    assert_redirected_to new_user_session_path
+	  end
 
 end
