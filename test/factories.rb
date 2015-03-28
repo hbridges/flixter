@@ -1,6 +1,5 @@
-FactoryGirl.define do  factory :lesson do
-    
-  end
+FactoryGirl.define do  
+  
   factory :section do
     
   end
@@ -17,6 +16,11 @@ FactoryGirl.define do  factory :lesson do
   	title "Test title"
   	description "This is just a test"
   	cost 10
+  end
+
+  factory :lesson do 
+    title "test title"
+    subtitle "sub test"
   end
 
 end
