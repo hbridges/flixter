@@ -1,7 +1,8 @@
 FactoryGirl.define do  
   
   factory :section do
-    
+    title "secton title"
+    course
   end
  
   factory :user do

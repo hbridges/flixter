@@ -3,8 +3,10 @@ require 'test_helper'
 class Instructor::LessonsControllerTest < ActionController::TestCase
  
   test 'Instructor sign in required' do
+    section = FactoryGirl.create(:section)
   	assert_no_difference 'Lesson.count' do
-  		post :create, {
+  		post :create, { 
+        :section_id => section.id,
   			:lesson => {
   				:title => 'Test',
   				:subtitle => 'sub test'
@@ -15,10 +17,11 @@ class Instructor::LessonsControllerTest < ActionController::TestCase
   end
 
  test "update as a different user" do
-    course = FactoryGirl.create(:course)
+    section = FactoryGirl.create(:section)
     user = FactoryGirl.create(:user)
     sign_in user
     post :create, {
+        :section_id => section.id,
         :lesson => {
           :title => 'Test',
           :subtitle => 'sub test'
