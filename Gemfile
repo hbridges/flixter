@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'mini_magick'
+
 gem 'figaro'
 
 gem "fog", "~> 1.3.1"
