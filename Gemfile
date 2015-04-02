@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+
+gem "fog", "~> 1.3.1"
+
+gem 'carrierwave'
+
 gem "factory_girl_rails", "~> 4.0"
 
 gem 'simple_form'
