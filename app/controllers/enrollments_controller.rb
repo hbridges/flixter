@@ -6,6 +6,9 @@ class EnrollmentsController < ApplicationController
 		redirect_to course_path(current_course)
 	end
 
+	def enrolled_in?(course)
+		
+	end
 	private
 
 	def current_course
