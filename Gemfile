@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'stripe', '~> 1.20.4'
+
 gem 'mini_magick'
 
 gem 'figaro'
