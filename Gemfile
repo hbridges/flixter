@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'ranked-model'
+
 gem 'stripe', '~> 1.20.4'
 
 gem 'mini_magick'
